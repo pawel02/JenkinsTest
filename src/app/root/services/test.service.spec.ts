@@ -31,7 +31,7 @@ describe('TestService', () => {
 
   it('Get Observable', (done: DoneFn)=>{
     service.sObs.subscribe(value => {
-      expect(value).toBe('Something');
+      expect(value).toBe('thing');
       done();
     });
     service.next();
