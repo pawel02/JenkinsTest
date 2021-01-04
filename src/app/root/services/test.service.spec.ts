@@ -29,13 +29,13 @@ describe('TestService', () => {
     expect(service.GetVal()).toBe(stubVal, 'service returned stub value');
   });
 
-  // it('Get Observable', (done: DoneFn)=>{
-  //   service.sObs.subscribe(value => {
-  //     expect(value).toBe('Something');
-  //     done();
-  //   });
-  //   service.next();
-  // })
+  it('Get Observable', (done: DoneFn)=>{
+    service.sObs.subscribe(value => {
+      expect(value).toBe('Something');
+      done();
+    });
+    service.next();
+  })
 
   // it('should be created', () => {
   //   expect(service).toBeTruthy();
