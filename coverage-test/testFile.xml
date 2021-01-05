@@ -1,14 +1,25 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome 87.0.4280.88 (Windows 10)" package="test" timestamp="2021-01-04T17:04:37" id="0" hostname="DESKTOP-N1QRIRB" tests="7" errors="0" failures="0" time="0.056">
+<testsuite name="Chrome 87.0.4280.88 (Windows 10)" package="test" timestamp="2021-01-05T09:13:00" id="0" hostname="DESKTOP-N1QRIRB" tests="7" errors="0" failures="1" time="0.145">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"/>
   </properties>
-  <testcase name="MainComponent should create" time="0.03" classname=".MainComponent"/>
-  <testcase name="ChildComponent should create" time="0.009" classname=".ChildComponent"/>
-  <testcase name="AppComponent should create the app" time="0.008" classname=".AppComponent"/>
-  <testcase name="AppComponent should have as title 'Testing'" time="0.004" classname=".AppComponent"/>
+  <testcase name="TestService Get Observable" time="0.097" classname=".TestService">
+    <failure type="">TypeError: Cannot read property 'sObs' of undefined
+    at UserContext.&lt;anonymous&gt; (src/app/root/services/test.service.spec.ts:33:13)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:363:1)
+    at Zone.run (node_modules/zone.js/dist/zone-evergreen.js:123:1)
+    at runInTestZone (node_modules/zone.js/dist/zone-testing.js:542:1)
+    at UserContext.&lt;anonymous&gt; (node_modules/zone.js/dist/zone-testing.js:558:1)
+    at &lt;Jasmine&gt;
+</failure>
+  </testcase>
   <testcase name="TestService spy example" time="0.001" classname=".TestService"/>
-  <testcase name="TestService Get Observable" time="0.002" classname=".TestService"/>
+  <testcase name="AppComponent should create the app" time="0.026" classname=".AppComponent"/>
+  <testcase name="AppComponent should have as title 'Testing'" time="0.004" classname=".AppComponent"/>
+  <testcase name="MainComponent should create" time="0.008" classname=".MainComponent"/>
+  <testcase name="ChildComponent should create" time="0.007" classname=".ChildComponent"/>
   <testcase name="OtherService should be created" time="0.002" classname=".OtherService"/>
   <system-out>
     <![CDATA[Chrome 87.0.4280.88 (Windows 10) ERROR: ''app-child' is not a known element:
