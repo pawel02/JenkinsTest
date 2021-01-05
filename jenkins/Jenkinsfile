@@ -19,6 +19,14 @@ pipeline {
                 always {
                     junit 'coverage-test/testFile.xml'
                 }
+                changed{
+                    emailext attachLog: true,
+                     body: 'please go to ${BUILD_URL} and verify build', 
+                     compressLog: true,
+                      recipientProviders: [upstreamDevelopers()], 
+                      subject: 'JOB \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input', 
+                      to: 'pawel.bes12@gamail.com'                
+                }
             }
         }
         stage('Build')
