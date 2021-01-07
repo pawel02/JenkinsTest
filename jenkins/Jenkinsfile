@@ -1,6 +1,9 @@
 pipeline {
     agent any
-    triggers { pollSCM ('H/15 * * * *') }
+    //triggers { pollSCM ('H/15 * * * *') }
+    parameters{
+        booleanParam(name: 'RC', defaultValue: false, description: 'Is it a release candidate?')
+    }
     environment{
         VERSION = "0.1.0"
         VERSION_RC = "rc.2"
@@ -36,9 +39,13 @@ pipeline {
         }
         stage('Build')
         {
+            when{
+                expression { return params.RC }
+            }
             steps
             {
                 bat 'ng build --prod'
+                archiveArtifacts('dist/')
             }   
         }
         
