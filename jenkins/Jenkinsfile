@@ -30,7 +30,7 @@ pipeline {
                     task1: {
                         suffix message: "Another"
                         echo "Preparing the build ${VERSION_SUFFIX}"
-                    }
+                    },
                     task2:
                     {
                         git url: 'https://github.com/pawel02/JenkinsTest.git', branch: "main"
