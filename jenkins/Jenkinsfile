@@ -10,6 +10,10 @@ pipeline {
     }
     stages {
         stage('Preperation') {
+            environment
+            {
+                VERSION_SUFFIX = getVersionSufftix()
+            }
             steps {
                 echo "Preparing the build ${Version}"
                 git url: 'https://github.com/pawel02/JenkinsTest.git', branch: "main"
@@ -49,5 +53,17 @@ pipeline {
             }   
         }
         
+    }
+}
+
+String getVersionSufftix()
+{
+    if(params.RC)
+    {
+        return env.VERSION_RC
+    }
+    else
+    {
+        return env.VERSION_RC + '+ci.' + env.BUILD_NUMBER
     }
 }
