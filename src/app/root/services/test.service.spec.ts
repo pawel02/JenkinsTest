@@ -11,33 +11,35 @@ export class FakeValue extends OtherService
 describe('TestService', () => {
   let service: TestService;
 
-  /*
+  
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(TestService);
-  });*/
+  });
 
   it('spy example', ()=>
   {
-    const valSpy = jasmine.createSpyObj('OtherService', ['getVal']);
-    //return value when getVal gets called
-    const stubVal = 6;
-    valSpy.getVal.and.returnValue(stubVal);
+    // const valSpy = jasmine.createSpyObj('OtherService', ['getVal']);
+    // //return value when getVal gets called
+    // const stubVal = 6;
+    // valSpy.getVal.and.returnValue(stubVal);
 
-    service = new TestService(valSpy);
+    // service = new TestService(valSpy);
 
-    expect(service.GetVal()).toBe(stubVal, 'service returned stub value');
+    // expect(service.GetVal()).toBe(stubVal, 'service returned stub value');
+
+    expect(service.GetVal()).toBe(8);
   });
 
   it('Get Observable', (done: DoneFn)=>{
     service.sObs.subscribe(value => {
-      expect(value).toBe('omething');
+      expect(value).toBe('Something');
       done();
     });
     service.next();
   })
 
-  // it('should be created', () => {
-  //   expect(service).toBeTruthy();
-  // });
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
 });
