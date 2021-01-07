@@ -4,7 +4,13 @@ library identifier: 'JenkinsTest@main',
 
 
 pipeline {
-    agent any
+    agent 
+    {
+        node{
+            label "job1"
+            
+        }
+    }
     //triggers { pollSCM ('H/15 * * * *') }
     parameters{
         booleanParam(name: 'RC', defaultValue: false, description: 'Is it a release candidate?')
