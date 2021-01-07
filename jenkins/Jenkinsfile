@@ -1,6 +1,8 @@
-library identifier: 'JenkinsTest/tree/main/jenkins@main',
-        retriever: modernSCM([$class: 'GitSCMSource',
-        remote: 'https://github.com/pawel02/JenkinsTest.git'])
+//library identifier: 'JenkinsTest@main',
+//        retriever: modernSCM([$class: 'GitSCMSource',
+//        remote: 'https://github.com/pawel02/JenkinsTest.git'])
+
+libraryResource '/jenkins'
 
 pipeline {
     agent any
