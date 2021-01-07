@@ -15,7 +15,7 @@ pipeline {
                 VERSION_SUFFIX = getVersionSufftix()
             }
             steps {
-                echo "Preparing the build ${Version}"
+                echo "Preparing the build ${VERSION_SUFFIX}"
                 git url: 'https://github.com/pawel02/JenkinsTest.git', branch: "main"
                 bat 'npm install'
             }
