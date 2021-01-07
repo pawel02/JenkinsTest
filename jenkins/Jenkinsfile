@@ -19,7 +19,7 @@ pipeline {
                 VERSION_SUFFIX = getVersionSuffix()
             }
             steps {
-                suffix()
+                suffix message: "Another one"
                 echo "Preparing the build ${VERSION_SUFFIX}"
                 git url: 'https://github.com/pawel02/JenkinsTest.git', branch: "main"
                 bat 'npm install'
