@@ -1,3 +1,7 @@
+library identifier: 'JenkinsTest@main',
+        retriever: modernSCM([$class: 'GitSCMSource',
+        remote: 'https://github.com/pawel02/JenkinsTest.git'])
+
 pipeline {
     agent any
     //triggers { pollSCM ('H/15 * * * *') }
@@ -12,9 +16,10 @@ pipeline {
         stage('Preperation') {
             environment
             {
-                VERSION_SUFFIX = getVersionSufftix()
+                VERSION_SUFFIX = getVersionSuffix()
             }
             steps {
+                suffix()
                 echo "Preparing the build ${VERSION_SUFFIX}"
                 git url: 'https://github.com/pawel02/JenkinsTest.git', branch: "main"
                 bat 'npm install'
@@ -56,7 +61,7 @@ pipeline {
     }
 }
 
-String getVersionSufftix()
+String getVersionSuffix()
 {
     if(params.RC)
     {
