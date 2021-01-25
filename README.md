@@ -1,4 +1,7 @@
-# Testing
+# Jenkins Test project
+This is my small project where I was learning how to use Jenkins along with SCM. The code inside of here is kind of irrelevant along with the commits apart from the Jenkinsfile and the ./vars folder (thats where the libraries are at)
+
+## Testing
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
