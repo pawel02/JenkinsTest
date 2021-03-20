@@ -76,7 +76,6 @@ pipeline {
             {
                 bat 'Remove-Item -Recurse -Confirm:$false -Force dist'
             }
-
         }  
     }
 }
