@@ -9,4 +9,4 @@ jobs:
       - run: npm install
       - run: npm install --save-dev
       - run: npm install @angular/cli -g
-      - run: ng test --browsers ChromeHeadless
+      - run: ng test --browsers ChromeHeadless --watch=false
